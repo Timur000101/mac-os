@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ThemeSwitcher } from '@/widgets'
+</script>
 
 <template>
-	<div></div>
+	<ThemeSwitcher />
 </template>
 
 <style lang="scss" scoped></style>

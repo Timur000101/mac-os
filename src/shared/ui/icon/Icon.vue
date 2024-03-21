@@ -1,57 +1,27 @@
 <script setup lang="ts">
-import { getSvgIcon } from '@/shared/lib'
-import { computed } from 'vue'
+import { addCollection, Icon } from '@iconify/vue'
+import macOSIcons from './icons.json'
+import { IconName } from './types'
 
-const props = withDefaults(
+addCollection(macOSIcons)
+
+withDefaults(
 	defineProps<{
-		name: string
-		size: string
-		color?: string
+		icon?: IconName
 		width?: string
 		height?: string
-		fill?: string
 	}>(),
 	{
-		size: '24',
-		color: 'currentColor',
-		width: '24',
-		height: 'auto',
-		fill: 'currentColor'
+		width: '32',
+		height: '32'
 	}
 )
-
-const width = computed(() => {
-	return props.size ? `${props.size}px` : `${props.width}px`
-})
-
-const height = computed(() => {
-	return props.size ? `${props.size}px` : `${props.height}px`
-})
 </script>
 
 <template>
-	<div
-		class="base-icon"
-		:data-name="name"
-		:fill="fill ?? 'currentColor'"
-		stroke="currentColor"
-		:style="{
-			width,
-			height,
-			color
-		}"
-		v-html="getSvgIcon(name).default"
-	></div>
+	<Icon
+		:icon="`macos:${icon as string}`"
+		:width="width"
+		:height="height"
+	></Icon>
 </template>
-
-<style lang="scss" scoped>
-:deep(svg) {
-	width: 100%;
-	height: 100%;
-
-	path {
-		stroke: currentColor;
-		fill: v-bind(fill);
-	}
-}
-</style>

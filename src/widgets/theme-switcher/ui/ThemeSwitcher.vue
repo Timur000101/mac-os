@@ -1,26 +1,25 @@
 <script setup lang="ts">
 import { useTheme } from '@/app/providers/theme/lib/useTheme'
 import { Theme } from '@/app/providers/theme/types'
-import { Icon } from '@/shared/ui'
+import { Icon, IconButton } from '@/shared/ui'
+import { IconName } from '@/shared/ui/icon/types'
 import { computed } from 'vue'
 
 const { theme, toggleTheme } = useTheme()
 
-const rootStyle = computed(() => {
-	return theme.value === Theme.LIGHT ? 'Moon' : 'Brightness'
+const rootStyle = computed<IconName>(() => {
+	return (theme.value === Theme.LIGHT ? 'moon' : 'brightness') as IconName
 })
 </script>
 
 <template>
-	<button
-		class="h-7 w-7 flex items-center justify-center rounded-full bg-indigo-900
-			dark:bg-indigo-600"
-		type="button"
+	<IconButton
 		aria-label="Switch theme button"
+		class="rounded-full"
 		@click="toggleTheme"
 	>
-		<Icon :name="rootStyle" size="28" color="white" />
-	</button>
+		<Icon :icon="rootStyle" color="white" />
+	</IconButton>
 </template>
 
 <style scoped></style>
