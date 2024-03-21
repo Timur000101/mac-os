@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useTheme } from '@/app/providers/theme/lib/useTheme'
 import { Theme } from '@/app/providers/theme/types'
-import { computed } from 'vue'
 
 const { theme } = useTheme()
 
@@ -18,6 +18,6 @@ const rootStyle = computed(() => {
 		:class="theme"
 		:style="{ 'background-image': rootStyle }"
 	>
-		<router-view></router-view>
+		<router-view />
 	</div>
 </template>

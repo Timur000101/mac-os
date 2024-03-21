@@ -1,8 +1,8 @@
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
 
 export enum Theme {
 	LIGHT = 'light',
-	DARK = 'dark'
+	DARK = 'dark',
 }
 
 export interface ThemeContextProps {

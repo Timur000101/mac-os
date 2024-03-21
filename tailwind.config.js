@@ -5,8 +5,8 @@ export default {
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
 		fontFamily: {
-			sans: ['SFProDisplay']
-		}
+			sans: ['SFProDisplay'],
+		},
 	},
-	plugins: []
+	plugins: [],
 }

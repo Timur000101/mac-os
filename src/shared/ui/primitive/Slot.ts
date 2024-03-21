@@ -1,12 +1,13 @@
-import { renderSlotFragments } from '@/shared/utils'
 import { cloneVNode, defineComponent, mergeProps } from 'vue'
+import { renderSlotFragments } from '@/shared/utils'
 
 export const Slot = defineComponent({
 	name: 'PrimitiveSlot',
 	inheritAttrs: false,
 	setup(_, { attrs, slots }) {
 		return () => {
-			if (!slots.default) return null
+			if (!slots.default)
+				return null
 			const childrens = renderSlotFragments(slots.default())
 
 			const [firstChildren, ...otherChildren] = childrens
@@ -35,5 +36,5 @@ export const Slot = defineComponent({
 
 			return childrens
 		}
-	}
+	},
 })

@@ -5,5 +5,5 @@ type ElementType<T extends ReadonlyArray<unknown>> =
 	T extends ReadonlyArray<infer E> ? E : never
 
 const iconsArray = Object.keys(
-	macOSIcons.icons
+	macOSIcons.icons,
 ) as (keyof typeof macOSIcons.icons)[]

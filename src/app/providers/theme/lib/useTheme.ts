@@ -1,12 +1,14 @@
 import { inject } from 'vue'
+import type {
+	ThemeContextProps,
+} from '../types'
 import {
 	LOCAL_STORAGE_THEME_KEY,
 	THEME_PROVIDER,
 	Theme,
-	ThemeContextProps
 } from '../types'
 
-export const useTheme = () => {
+export function useTheme() {
 	const { theme, setTheme } = inject(THEME_PROVIDER, {} as ThemeContextProps)
 
 	const toggleTheme = () => {
@@ -18,6 +20,6 @@ export const useTheme = () => {
 
 	return {
 		theme,
-		toggleTheme
+		toggleTheme,
 	}
 }

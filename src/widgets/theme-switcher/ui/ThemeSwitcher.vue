@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useTheme } from '@/app/providers/theme/lib/useTheme'
 import { Theme } from '@/app/providers/theme/types'
 import { Icon, IconButton } from '@/shared/ui'
-import { IconName } from '@/shared/ui/icon/types'
-import { computed } from 'vue'
+import type { IconName } from '@/shared/ui/icon/types'
 
 const { theme, toggleTheme } = useTheme()
 

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { addCollection, Icon } from '@iconify/vue'
+import { Icon, addCollection } from '@iconify/vue'
 import macOSIcons from './icons.json'
-import { IconName } from './types'
-
-addCollection(macOSIcons)
+import type { IconName } from './types'
 
 withDefaults(
 	defineProps<{
@@ -13,9 +11,11 @@ withDefaults(
 	}>(),
 	{
 		width: '32',
-		height: '32'
-	}
+		height: '32',
+	},
 )
+
+addCollection(macOSIcons)
 </script>
 
 <template>
@@ -23,5 +23,5 @@ withDefaults(
 		:icon="`macos:${icon as string}`"
 		:width="width"
 		:height="height"
-	></Icon>
+	/>
 </template>

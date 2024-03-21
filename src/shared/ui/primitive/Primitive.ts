@@ -1,4 +1,5 @@
-import { Component, PropType, defineComponent, h } from 'vue'
+import type { Component, PropType } from 'vue'
+import { defineComponent, h } from 'vue'
 import { Slot } from './Slot'
 
 export type AsTag =
@@ -19,9 +20,9 @@ export type AsTag =
 	| 'svg'
 	| 'ul'
 	| 'template'
-	| ({} & string)
+	| (object & string)
 
-export type PrimitiveProps = {
+export interface PrimitiveProps {
 	asChild: boolean
 	as?: AsTag | Component
 }
@@ -32,12 +33,12 @@ export const Primitive = defineComponent({
 	props: {
 		asChild: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		as: {
 			type: [String, Object] as PropType<AsTag | Component>,
-			default: 'div'
-		}
+			default: 'div',
+		},
 	},
 	setup(props, { slots, attrs }) {
 		const asTag = props.asChild ? 'template' : props.as
@@ -46,5 +47,5 @@ export const Primitive = defineComponent({
 			return () => h(props.as, attrs, { default: slots.default })
 
 		return () => h(Slot, attrs, { default: slots.default })
-	}
+	},
 })
