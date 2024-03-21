@@ -1,0 +1,61 @@
+{
+	"root": true,
+	"env": {
+		"node": true
+	},
+	"parser": "vue-eslint-parser",
+	"parserOptions": {
+		"parser": "@typescript-eslint/parser",
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"extends": [
+		"plugin:vue/vue3-recommended",
+		"eslint:recommended",
+		"@vue/typescript/recommended",
+		"prettier"
+	],
+	"plugins": ["@typescript-eslint", "prettier", "prettier-plugin-classnames"],
+	"rules": {
+		"max-len": [
+			"error",
+			{
+				"code": 100
+			}
+		],
+		"vue/multi-word-component-names": "off",
+		"vue/no-multiple-template-root": "off",
+		"@typescript-eslint/ban-ts-comment": "off",
+		"vue/require-default-prop": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"vue/max-attributes-per-line": [
+			"error",
+			{
+				"singleline": {
+					"max": 4
+				},
+				"multiline": {
+					"max": 1
+				}
+			}
+		],
+		"vue/first-attribute-linebreak": [
+			"error",
+			{
+				"singleline": "ignore",
+				"multiline": "below"
+			}
+		],
+		"prettier/prettier": [
+			"error",
+			{
+				"singleQuote": true,
+				"endOfLine": "auto",
+				"trailingComma": "none"
+			}
+		],
+		"vue/html-indent": "off",
+		"@typescript-eslint/no-non-null-assertion": "off"
+	},
+	"ignorePatterns": ["node_modules", "dist"]
+}
