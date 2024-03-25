@@ -16,7 +16,6 @@ const rootStyle = computed(() => {
 <template>
 	<div
 		class="h-dvh w-dvw"
-		:class="theme"
 		:style="{ 'background-image': rootStyle }"
 	>
 		<Navbar />

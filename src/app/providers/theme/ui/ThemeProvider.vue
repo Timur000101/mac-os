@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { provide, ref } from 'vue'
+import { onMounted, provide, ref } from 'vue'
 import type {
 	ThemeContextProps,
 } from '../types'
@@ -16,11 +16,16 @@ const theme = ref<Theme>(defaultTheme)
 
 function toggleTheme() {
 	theme.value = theme.value === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
+	document.querySelector('html')?.setAttribute('class', theme.value)
 }
 
 provide<ThemeContextProps>(THEME_PROVIDER, {
 	theme,
 	setTheme: toggleTheme,
+})
+
+onMounted(() => {
+	document.querySelector('html')?.setAttribute('class', theme.value)
 })
 </script>
 

@@ -1,1 +1,5 @@
 export * from './theme-switcher'
+export * from './change-volume'
+export * from './user-data'
+export * from './battery-info'
+export * from './control-button'
