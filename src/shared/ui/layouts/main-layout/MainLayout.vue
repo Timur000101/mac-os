@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { Navbar } from '@/widgets'
 import { useTheme } from '@/app/providers/theme/lib/useTheme'
 import { Theme } from '@/app/providers/theme/types'
 
@@ -18,6 +19,8 @@ const rootStyle = computed(() => {
 		:class="theme"
 		:style="{ 'background-image': rootStyle }"
 	>
+		<Navbar />
+		<div class="h-6" />
 		<router-view />
 	</div>
 </template>

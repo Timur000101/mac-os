@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ThemeSwitcher } from '@/widgets'
+import { ThemeSwitcher } from '@/features'
 </script>
 
 <template>
