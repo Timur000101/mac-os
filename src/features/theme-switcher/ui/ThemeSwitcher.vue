@@ -15,7 +15,7 @@ const rootStyle = computed<IconName>(() => {
 <template>
 	<IconButton
 		aria-label="Switch theme button"
-		class="rounded-full"
+		class="rounded-full bg-indigo-900 dark:bg-indigo-600"
 		@click="toggleTheme"
 	>
 		<Icon :icon="rootStyle" color="white" />

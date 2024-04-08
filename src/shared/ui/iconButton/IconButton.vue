@@ -2,8 +2,7 @@
 
 <template>
 	<button
-		class="h-7 w-7 flex items-center justify-center rounded-full bg-indigo-900
-			dark:bg-indigo-600"
+		class="h-7 w-7 flex items-center justify-center rounded-full"
 		type="button"
 		v-bind="$attrs"
 	>

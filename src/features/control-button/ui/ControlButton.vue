@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '@/shared/ui'
-import { useControl } from '@/shared/lib/hooks/useControl'
+import { useControl } from '@/shared/lib/hooks/useControlCenter'
 
 const { isShown, toggleControl } = useControl()
 </script>
